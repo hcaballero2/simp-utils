@@ -14,7 +14,7 @@
 #
 # The script reads files off of the DVD with `xorriso` or, if that is not
 # installed, `isoinfo` (from genisoimage), so no root access is required for
-# locally unpacking an ISO.  EL9 and later do not ship `isoinfo`.  Set
+# locally unpacking an ISO.  EL9 and later ship `isoinfo` only in EPEL.  Set
 # UNPACK_DVD_ISO_TOOL to `xorriso` or `isoinfo` to choose one explicitly.
 #
 # The `[general]` section of the ISO's `.treeinfo` file is used to find the OS
@@ -142,8 +142,8 @@ end
 
 # Reads files from an ISO image or a block device without mounting it.
 #
-# Uses `xorriso`, which EL8 and later ship, and falls back to `isoinfo` from
-# genisoimage, which EL9 and later do not ship.
+# Uses `xorriso`, which EL8 and later ship in AppStream, and falls back to
+# `isoinfo` from genisoimage, which EL9 and later ship only in EPEL.
 class IsoReader # rubocop:disable Style/OneClassPerFile
   TOOLS = ['xorriso', 'isoinfo'].freeze
 

@@ -116,8 +116,8 @@ chmod -R u=rwx,g=rx,o=rx %{buildroot}/usr/local/*bin
 - unpack_dvd:
   - Support AlmaLinux, Rocky Linux, and Oracle Linux media, unpacked under
     their Facter OS names (AlmaLinux, Rocky, OracleLinux)
-  - Read ISOs with xorriso, falling back to isoinfo, which EL9 and later do
-    not ship
+  - Read ISOs with xorriso, falling back to isoinfo, which EL9 and later
+    ship only in EPEL
   - Fail with a clear error for an unsupported OS family or when neither
     tool is installed
 
